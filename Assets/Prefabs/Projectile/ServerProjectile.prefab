@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8160837512571360285, guid: 77fdcb2f04155cf4d8cc8de02e2c3659, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 951099334
+      objectReference: {fileID: 0}
     - target: {fileID: 8290540048480387788, guid: 77fdcb2f04155cf4d8cc8de02e2c3659, type: 3}
       propertyPath: m_Name
       value: ServerProjectile
@@ -60,5 +64,26 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 8344191100294470072, guid: 77fdcb2f04155cf4d8cc8de02e2c3659, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8290540048480387788, guid: 77fdcb2f04155cf4d8cc8de02e2c3659, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6970706778284767778}
   m_SourcePrefab: {fileID: 100100000, guid: 77fdcb2f04155cf4d8cc8de02e2c3659, type: 3}
+--- !u!1 &9067639359424861589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8290540048480387788, guid: 77fdcb2f04155cf4d8cc8de02e2c3659, type: 3}
+  m_PrefabInstance: {fileID: 1070541470996125529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6970706778284767778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9067639359424861589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83405ff85e666dc45989ec0ff934838d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
