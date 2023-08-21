@@ -1,16 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
-using System;
-
 
 public class Health : NetworkBehaviour
 {
     [field: SerializeField] public int MaxHealth { get; private set; } = 100;
+
     public NetworkVariable<int> CurrentHealth = new NetworkVariable<int>();
 
-    public bool isDead;
+    private bool isDead;
 
     public Action<Health> OnDie;
 
@@ -23,12 +23,12 @@ public class Health : NetworkBehaviour
 
     public void TakeDamage(int damageValue)
     {
-
         ModifyHealth(-damageValue);
     }
-    public void RestoreHealth(int heal)
+
+    public void RestoreHealth(int healValue)
     {
-        ModifyHealth(heal);
+        ModifyHealth(healValue);
     }
 
     private void ModifyHealth(int value)
@@ -36,10 +36,9 @@ public class Health : NetworkBehaviour
         if (isDead) { return; }
 
         int newHealth = CurrentHealth.Value + value;
-        //it cant go negative
         CurrentHealth.Value = Mathf.Clamp(newHealth, 0, MaxHealth);
 
-        if (CurrentHealth.Value == 0)
+        if(CurrentHealth.Value == 0)
         {
             OnDie?.Invoke(this);
             isDead = true;
