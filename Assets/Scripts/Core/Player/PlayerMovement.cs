@@ -50,3 +50,4 @@ public class PlayerMovement : NetworkBehaviour
         previousMovementInput = movementInput;
     }
 }
+

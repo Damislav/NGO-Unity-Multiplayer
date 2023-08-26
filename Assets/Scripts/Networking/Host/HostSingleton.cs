@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HostSingleton : MonoBehaviour
 {
-    public static HostSingleton instance;
+    private static HostSingleton instance;
 
     public HostGameManager GameManager { get; private set; }
 
@@ -36,6 +36,7 @@ public class HostSingleton : MonoBehaviour
     {
         GameManager = new HostGameManager();
     }
+
     private void OnDestroy()
     {
         GameManager?.Dispose();
