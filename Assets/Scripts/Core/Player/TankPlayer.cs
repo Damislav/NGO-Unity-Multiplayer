@@ -27,8 +27,8 @@ public class TankPlayer : NetworkBehaviour
     {
         if (IsServer)
         {
-            UserData userData =
-                HostSingleton.Instance.GameManager.NetworkServer.GetUserDataByClientId(OwnerClientId);
+            GameData userData =
+                   HostSingleton.Instance.GameManager.NetworkServer.GetUserDataByClientId(OwnerClientId);
 
             PlayerName.Value = userData.userName;
 
@@ -50,5 +50,7 @@ public class TankPlayer : NetworkBehaviour
             OnPlayerDespawned?.Invoke(this);
         }
     }
+
+
 }
 

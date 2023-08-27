@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PlayerMovement : NetworkBehaviour
@@ -15,6 +17,8 @@ public class PlayerMovement : NetworkBehaviour
     [SerializeField] private float turningRate = 30f;
 
     private Vector2 previousMovementInput;
+
+    public bool isMoving { get; private set; }
 
     public override void OnNetworkSpawn()
     {
@@ -36,6 +40,17 @@ public class PlayerMovement : NetworkBehaviour
 
         float zRotation = previousMovementInput.x * -turningRate * Time.deltaTime;
         bodyTransform.Rotate(0f, 0f, zRotation);
+
+        isMoving = previousMovementInput.magnitude > 0.01f;
+
+        if (isMoving)
+        {
+            // player is moving
+            Debug.Log("Player is moving");
+
+            //trigger audio clip
+            // AudioManager.Instance.PlayFootstepsSound(transform.position);
+        }
     }
 
     private void FixedUpdate()
@@ -43,11 +58,17 @@ public class PlayerMovement : NetworkBehaviour
         if (!IsOwner) { return; }
 
         rb.velocity = (Vector2)bodyTransform.up * previousMovementInput.y * movementSpeed;
+
     }
 
     private void HandleMove(Vector2 movementInput)
     {
         previousMovementInput = movementInput;
     }
+
+
+
+
+
 }
 
