@@ -24,6 +24,8 @@ public class Health : NetworkBehaviour
     public void TakeDamage(int damageValue)
     {
         ModifyHealth(-damageValue);
+
+        AudioManager.Instance.PlayDamageTankSound(transform.position);
     }
 
     public void RestoreHealth(int healValue)

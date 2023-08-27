@@ -39,5 +39,9 @@ public class LeaderboardEntityDisplay : MonoBehaviour
     {
         displayText.text = $"{transform.GetSiblingIndex() + 1}. {playerName} ({Coins})";
     }
+    private void OnDisable()
+    {
+        Destroy(gameObject);
+    }
 }
 

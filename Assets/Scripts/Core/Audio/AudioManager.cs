@@ -6,6 +6,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
+
+
     [SerializeField] private AudioClipRefsSO audioClipRefsSO;
 
     private void Awake()
@@ -22,9 +24,17 @@ public class AudioManager : MonoBehaviour
     {
         PlaySound(audioClipRefsSO.tracks, position);
     }
-
-
-
-
+    public void PlayBarrelShotSound(Vector3 position)
+    {
+        PlaySound(audioClipRefsSO.barrelShot, position);
+    }
+    public void PlayPickupSound(Vector3 position)
+    {
+        PlaySound(audioClipRefsSO.pickupSound, position);
+    }
+    public void PlayDamageTankSound(Vector3 position)
+    {
+        PlaySound(audioClipRefsSO.damageTank, position);
+    }
 
 }

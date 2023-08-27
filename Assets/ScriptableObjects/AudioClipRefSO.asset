@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f59f7d0150e67954b9a2f609d176727f, type: 3}
   m_Name: AudioClipRefSO
   m_EditorClassIdentifier: 
-  footstep: {fileID: 8300000, guid: 022ff254de8cda84f85482df6787bc65, type: 3}
+  tracks: {fileID: 8300000, guid: 58d9bfbe7b38b0940bfe1232dd722e2c, type: 3}
+  barrelShot: {fileID: 8300000, guid: 281e15cc92254794eaf05caf4d044b76, type: 3}
+  pickupSound: {fileID: 8300000, guid: 09c2054db6152544ba5615e0b50f4f0a, type: 3}
+  healingSound: {fileID: 8300000, guid: eec3bf121b316d64ca1c8aac7573a2f4, type: 3}
+  damageTank: {fileID: 8300000, guid: 2e071f5b8b8467d45a5e6e24c23c6ad4, type: 3}
+  tankExplosion: {fileID: 8300000, guid: d47e6ed162da1f740ad807d00f4679f3, type: 3}

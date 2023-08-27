@@ -21,9 +21,10 @@ public class TankAudio : MonoBehaviour
 
             if (player.isMoving)
             {
-                AudioManager.Instance.PlayFootstepsSound(player.transform.position);
 
+                AudioManager.Instance.PlayFootstepsSound(player.transform.position);
             }
+
         }
     }
 }

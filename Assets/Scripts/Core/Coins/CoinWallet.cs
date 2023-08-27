@@ -52,7 +52,7 @@ public class CoinWallet : NetworkBehaviour
         int coinValue = coin.Collect();
 
         if (!IsServer) { return; }
-
+        // AudioManager.Instance.PlayPickupSound(transform.position);
         TotalCoins.Value += coinValue;
     }
 

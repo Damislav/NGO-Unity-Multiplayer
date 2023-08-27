@@ -38,13 +38,14 @@ public class CoinSpawner : NetworkBehaviour
 
         coinInstance.SetValue(coinValue);
         coinInstance.GetComponent<NetworkObject>().Spawn();
-
+        // coinInstance.gameObject.transform.SetParent(this.transform);
         coinInstance.OnCollected += HandleCoinCollected;
     }
 
     private void HandleCoinCollected(RespawningCoin coin)
     {
         coin.transform.position = GetSpawnPoint();
+
         coin.Reset();
     }
 
@@ -64,4 +65,6 @@ public class CoinSpawner : NetworkBehaviour
             }
         }
     }
+
+
 }

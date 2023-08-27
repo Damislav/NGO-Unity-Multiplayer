@@ -29,6 +29,7 @@ public class DealDamageOnContact : MonoBehaviour
         if (col.attachedRigidbody.TryGetComponent<Health>(out Health health))
         {
             health.TakeDamage(damage);
+
         }
     }
 }

@@ -41,16 +41,17 @@ public class PlayerMovement : NetworkBehaviour
         float zRotation = previousMovementInput.x * -turningRate * Time.deltaTime;
         bodyTransform.Rotate(0f, 0f, zRotation);
 
-        isMoving = previousMovementInput.magnitude > 0.01f;
-
-        if (isMoving)
+        if (previousMovementInput.magnitude > 0.01f)
         {
-            // player is moving
-            Debug.Log("Player is moving");
 
-            //trigger audio clip
-            // AudioManager.Instance.PlayFootstepsSound(transform.position);
+            isMoving = true;
         }
+        else
+        {
+            isMoving = false;
+        }
+
+
     }
 
     private void FixedUpdate()
@@ -58,7 +59,6 @@ public class PlayerMovement : NetworkBehaviour
         if (!IsOwner) { return; }
 
         rb.velocity = (Vector2)bodyTransform.up * previousMovementInput.y * movementSpeed;
-
     }
 
     private void HandleMove(Vector2 movementInput)

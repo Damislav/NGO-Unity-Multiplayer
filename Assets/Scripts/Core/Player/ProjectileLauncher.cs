@@ -131,6 +131,8 @@ public class ProjectileLauncher : NetworkBehaviour
         {
             rb.velocity = rb.transform.up * projectileSpeed;
         }
+        //fire sound projectle
+        AudioManager.Instance.PlayBarrelShotSound(transform.position);
     }
 }
 
